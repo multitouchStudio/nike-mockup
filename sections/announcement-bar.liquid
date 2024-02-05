@@ -1,5 +1,6 @@
-<section>announcement bar</section>
-
+{% if section.settings['show-annoucement'] %}
+  <section>announcement bar</section>
+{% endif %}
 {% schema %}
     {
       "name": "Annoucement Bar",
