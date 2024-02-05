@@ -1,5 +1,16 @@
 {% if section.settings['show-annoucement'] %}
-  <section>announcement bar</section>
+  <div class="annoucement-bar">
+    <div class="annoucement-bar-left-section">
+      {% if section.settings.image != blank %}
+        <img width="40" height="40" loading="lazy" src="{{ section.settings.image | image_url }}"/>
+      {% else %}
+        <img width="40" height="40" loading="lazy" src="{{ 'a.png' | image_url }}"/>
+      {% endif %}
+    </div>
+    <div class="annoucement-bar-right-section">
+
+    </div>
+  </div>
 {% endif %}
 {% schema %}
     {
@@ -10,6 +21,12 @@
           "id": "show-annoucement",
           "label": "Show Announcement",
           "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Pick Image",
+          "info": "Pick an image"
         }
       ],
       "presets": []
